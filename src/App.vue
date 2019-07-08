@@ -1,28 +1,12 @@
 <template>
   <div id="app">
-   <!-- 头部提取 -->
+    <!-- 头部提取 -->
     <app-header></app-header>
+    
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active">
-              <a href="#">
-                Overview
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">Reports</a>
-            </li>
-            <li>
-              <a href="#">Analytics</a>
-            </li>
-            <li>
-              <a href="#">Export</a>
-            </li>
-          </ul>
-        </div>
+        <!-- 提取侧边栏 -->
+        <app-silder></app-silder>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Hero List</h2>
           <a class="btn btn-success" href="add.html">Add</a>
@@ -269,17 +253,21 @@
         </div>
       </div>
     </div>
+    
   </div>
 </template>
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import AppHeader from "./components/AppHeader.vue"
+import AppHeader from "./components/AppHeader.vue";
+import AppSilder from "./components/AppSilder.vue";
+
 
 export default {
   name: "app",
   components: {
     HelloWorld,
-    AppHeader
+    AppHeader,
+    AppSilder
   }
 };
 </script>
