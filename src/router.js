@@ -4,6 +4,9 @@ import VueRouter from "vue-router"
 import HeroList from './views/heroes/HeroList.vue'
 import WeaponsList from './views/weapons/WeaponsList.vue'
 import EquipsList from './views/equips/EquipsList.vue'
+// 添加英雄组件
+import HeroAdd from './views/heroes/HeroAdd.vue'
+
 
 import Vue from 'vue';
 
@@ -18,6 +21,7 @@ const router = new VueRouter({
     {name : 'heroes' , path:'/heroes' , component : HeroList },
     {name :'weapons' , path:'/weapons' , component: WeaponsList},
     {name :'equips' , path:'/equips' , component: EquipsList},
+    {name :'heroesadd' , path:'/heroes/add' , component: HeroAdd},
   ]
 })
 
