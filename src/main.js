@@ -20,6 +20,7 @@ Vue.use(VueRouter)
 
 
 const router = new VueRouter({
+  linkExactActiveClass: 'active',
   routes:[
     {name :'home' , path :'/' , redirect: '/heroes'},
     {name : 'heroes' , path:'/heroes' , component : HeroList },
