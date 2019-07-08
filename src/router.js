@@ -6,6 +6,7 @@ import WeaponsList from './views/weapons/WeaponsList.vue'
 import EquipsList from './views/equips/EquipsList.vue'
 // 添加英雄组件
 import HeroAdd from './views/heroes/HeroAdd.vue'
+import HeroEquips from './views/heroes/HeroEquips.vue'
 
 
 import Vue from 'vue';
@@ -26,6 +27,7 @@ const router = new VueRouter({
     {name :'weapons' , path:'/weapons' , component: WeaponsList},
     {name :'equips' , path:'/equips' , component: EquipsList},
     {name :'heroesadd' , path:'/heroes/add' , component: HeroAdd},
+    {name :'heroesedit' , path:'/heroes/edit/:id' , component:HeroEquips}
   ]
 })
 
