@@ -30,5 +30,5 @@ const router = new VueRouter({
     {name :'heroesedit' , path:'/heroes/edit/:id' , component:HeroEquips , props:true}
   ]
 })
-
+// 导出
 export default router;
