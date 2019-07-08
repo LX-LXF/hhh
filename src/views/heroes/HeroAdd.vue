@@ -22,7 +22,7 @@
 
 <script>
 
-import axios from 'axios'
+
 
 export default {
     data() {
@@ -36,7 +36,7 @@ export default {
     },
     methods: {
         add(){
-            axios
+            this.axios
             .post('http://localhost:3000/heroes', this.formData)
             .then((response) =>{
                 const status = response.status

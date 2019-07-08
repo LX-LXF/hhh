@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import axios from "axios";
+
 
 // 在组件中获取路由参数 $router.params.id
 export default {
@@ -47,7 +47,7 @@ export default {
     // 根据id加载英雄数据
     loadDataByid() {
       // 发送请求
-      axios.get(`http://localhost:3000/heroes/${this.id}`).then(response => {
+      this.axios.get(`http://localhost:3000/heroes/${this.id}`).then(response => {
         const { data, status } = response;
         if (status === 200) {
           // 存储数据
@@ -57,7 +57,7 @@ export default {
     },
     updata() {
         // 点击提交按钮
-        axios
+        this.axios
             .put(`http://localhost:3000/heroes/${this.id}` , this.formData)
             .then((response) =>{
                 const status = response.status

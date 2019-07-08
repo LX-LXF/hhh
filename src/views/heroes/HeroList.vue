@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { all } from 'q';
+
+
 
 export default {
   data() {
@@ -50,7 +50,7 @@ export default {
   methods:{
     // 发送请求 获取数据
   loadData(){
-    axios
+    this.axios
       .get('http://localhost:3000/heroes')
       .then((response)=>{
         // console.log(response)
@@ -70,7 +70,7 @@ export default {
     if(!confirm('确认删除？')) {
       return false
     }
-    axios
+    this.axios
     .delete(`http://localhost:3000/heroes/${id}`)
     .then((response) => {
       const {status} = response
