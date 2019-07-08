@@ -18,9 +18,9 @@
             <td>{{item.name}}</td>
             <td>{{item.gender}}</td>
             <td>
-              <a href="edit.html">edit</a>
+              <a href="edit.html">编辑</a>
               &nbsp;&nbsp;
-              <a href="javascript:window.confirm('Are you sure?')">delete</a>
+              <a href="javascript:" @click="del(item.id)">删除</a>
             </td>
           </tr>
         </tbody>
@@ -62,6 +62,27 @@ export default {
       .catch((err) =>{
         alert('服务器异常')
       })
+  },
+  del(id){
+    // 删除提示
+    if(!confirm('确认删除？')) {
+      return false
+    }
+    axios
+    .delete(`http://localhost:3000/heroes/${id}`)
+    .then((response) => {
+      const {status} = response
+      if(status === 200) {
+        // 重新加载数据
+        this.loadData()
+      }else{
+        alert('失败')
+      }
+    })  
+    .catch((err) => {
+      alert('服务器异常')
+    })
+
   }
   },
 };
