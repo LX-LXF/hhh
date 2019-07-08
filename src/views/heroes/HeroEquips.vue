@@ -20,7 +20,14 @@
 </template>
 
 <script>
+
+
+import axios from 'axios'
+
+
+// 在组件中获取路由参数 $router.params.id
 export default {
+    props:['id'],
     data() {
         return {
             formData:{
@@ -29,6 +36,25 @@ export default {
             }
         }
     },
+    // 组件加载完毕
+    mounted(){
+        this.loadDataByid()
+    },
+    methods:{
+        // 根据id加载英雄数据
+        loadDataByid(){
+            // 发送请求
+            axios
+                .get(`http://localhost:3000/heroes/${this.id}`)
+                .then((response) =>{
+                    const {data , status} = response
+                    if(status === 200) {
+                        // 存储数据
+                        this.formData = data
+                    }
+                })
+        }
+    }
 }
 </script>
 
