@@ -15,7 +15,11 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   // 实现高亮显示
-  linkExactActiveClass: 'active',
+  // 当url中的地址，跟a标签的href中的地址精确匹配的时候 添加类样式
+  // linkExactActiveClass: 'active',
+
+  // 当url中的地址，跟a标签的href中的路由地址的时候 添加类样式
+  linkActiveClass: 'active',
   routes:[
     {name :'home' , path :'/' , redirect: '/heroes'},
     {name : 'heroes' , path:'/heroes' , component : HeroList },
